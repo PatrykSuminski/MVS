@@ -15,7 +15,8 @@
   font-weight: 300; }
 
 .upper {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 1px; }
 
 .heading-2 {
   font-size: 3.8rem;
@@ -82,12 +83,12 @@ a {
     font-weight: 400;
     padding: 1rem 3.5rem;
     letter-spacing: 1px;
-    background-color: rgba(3, 3, 3, 0.35); }
+    background-color: rgba(3, 3, 3, 0.25); }
   .header__text {
     font-size: 2.4rem;
     font-weight: 300;
     padding: 0.8rem 2rem;
-    background-color: rgba(3, 3, 3, 0.35); }
+    background-color: rgba(3, 3, 3, 0.25); }
   .header__scroll {
     margin-top: 20rem;
     display: flex;
@@ -179,3 +180,57 @@ a {
     letter-spacing: 1px;
     font-size: 2rem;
     margin-bottom: 2rem; }
+
+.gallery {
+  min-height: 100vh;
+  display: flex; }
+  .gallery__item {
+    background-color: orange;
+    min-width: calc(100% / 3); }
+    .gallery__item:nth-child(n) {
+      background-position: center;
+      background-size: cover; }
+    .gallery__item-1 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../img/interior-1.jpg); }
+    .gallery__item-2 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../img/interior-2.jpg);
+      position: relative; }
+      .gallery__item-2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 10; }
+    .gallery__item-3 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../img/interior-3.jpg); }
+  .gallery__container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .gallery__text {
+    font-size: 3.8rem;
+    color: #ededed;
+    padding: 1rem 3.5rem;
+    background-color: rgba(3, 3, 3, 0.25);
+    width: 100%;
+    text-align: center; }
+  .gallery__arrows {
+    width: 80%;
+    display: flex;
+    justify-content: space-between; }
+  .gallery__arrow {
+    z-index: 999;
+    border: solid #ededed;
+    border-width: 0 0.2rem 0.2rem 0;
+    display: inline-block;
+    padding: 2.5rem; }
+    .gallery__arrow-left {
+      transform: rotate(135deg); }
+    .gallery__arrow-right {
+      transform: rotate(-45deg); }

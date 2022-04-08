@@ -5,6 +5,12 @@ $color-dark: #121212;
 $color-light: #ededed;
 
 /////////////
+// GRADIENT
+$gradient-dark: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+
+$gradient-light: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+
+/////////////
 // BUTTONS
 .btn {
 	display: inline-block;
@@ -35,6 +41,7 @@ $color-light: #ededed;
 // TYPOGRAPHY
 .upper {
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 ////////////////////

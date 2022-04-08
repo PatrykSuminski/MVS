@@ -3,8 +3,7 @@
 
 .header {
 	color: #fff;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-		url(../img/header.jpg);
+	background-image: $gradient-dark, url(../img/header.jpg);
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
@@ -37,7 +36,7 @@
 		padding: 1rem 3.5rem;
 		letter-spacing: 1px;
 
-		background-color: rgba(3, 3, 3, 0.35);
+		background-color: rgba(3, 3, 3, 0.25);
 	}
 
 	&__text {
@@ -45,7 +44,7 @@
 		font-weight: 300;
 
 		padding: 0.8rem 2rem;
-		background-color: rgba(3, 3, 3, 0.35);
+		background-color: rgba(3, 3, 3, 0.25);
 	}
 
 	&__scroll {
@@ -188,5 +187,87 @@
 		letter-spacing: 1px;
 		font-size: 2rem;
 		margin-bottom: 2rem;
+	}
+}
+
+.gallery {
+	min-height: 100vh;
+
+	display: flex;
+
+	&__item {
+		background-color: orange;
+		min-width: calc(100% / 3);
+
+		&:nth-child(n) {
+			background-position: center;
+			background-size: cover;
+		}
+
+		&-1 {
+			background-image: $gradient-light, url(../img/interior-1.jpg);
+		}
+		&-2 {
+			background-image: $gradient-light, url(../img/interior-2.jpg);
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.6);
+				z-index: 10;
+			}
+		}
+		&-3 {
+			background-image: $gradient-light, url(../img/interior-3.jpg);
+		}
+	}
+
+	&__container {
+		height: 100%;
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__text {
+		font-size: 3.8rem;
+		color: $color-light;
+
+		padding: 1rem 3.5rem;
+		background-color: rgba(3, 3, 3, 0.25);
+
+		width: 100%;
+
+		text-align: center;
+	}
+
+	&__arrows {
+		width: 80%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__arrow {
+		z-index: 999;
+		border: solid $color-light;
+		border-width: 0 0.2rem 0.2rem 0;
+		display: inline-block;
+		padding: 2.5rem;
+
+		&-left {
+			transform: rotate(135deg);
+		}
+
+		&-right {
+			transform: rotate(-45deg);
+		}
 	}
 }
