@@ -1,0 +1,14 @@
+{
+	"name": "mvs",
+	"version": "1.0.0",
+	"description": "mvs construction website",
+	"main": "index.js",
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss css/style.css -w"
+	},
+	"author": "Patryk Suminski",
+	"license": "ISC",
+	"devDependencies": {
+		"node-sass": "^7.0.1"
+	}
+}

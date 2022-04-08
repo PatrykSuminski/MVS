@@ -1,0 +1,61 @@
+/////////////
+// COLORS
+$color-primary: #eb2f2f;
+$color-dark: #121212;
+$color-light: #ededed;
+
+/////////////
+// BUTTONS
+.btn {
+	display: inline-block;
+	font-size: 1.6rem;
+	border: 2px solid black;
+	padding: 1rem 1.5rem;
+
+	transition: all 0.2s ease-in;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&--primary {
+		background-color: $color-primary;
+		color: #fff;
+	}
+}
+
+/////////////
+// LOGO
+.logo {
+	color: $color-primary;
+	font-weight: 300;
+}
+
+////////////////////
+// TYPOGRAPHY
+.upper {
+	text-transform: uppercase;
+}
+
+////////////////////
+// HEADINGS
+.heading-2 {
+	font-size: 3.8rem;
+	margin-top: 2rem;
+	margin-bottom: 8rem;
+	letter-spacing: 2px;
+}
+
+.heading-4 {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+////////////////////
+// BREAK LINE
+.break {
+	height: 2px;
+	width: 4rem;
+	background-color: currentColor;
+	transform: translateY(10px);
+}
