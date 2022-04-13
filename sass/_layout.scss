@@ -127,16 +127,7 @@
 	}
 
 	&__info {
-		display: grid;
-		grid-template-columns: minmax(min-content, 8rem) minmax(min-content, 1fr);
-		column-gap: 1rem;
-		margin-left: auto;
-
-		&-bold {
-			font-weight: bold;
-			font-size: 2rem;
-			margin-bottom: 4rem;
-		}
+		@include importantHeadings; //utility class
 
 		&-buttons {
 			margin-top: 10rem;
@@ -157,10 +148,7 @@
 	padding: 20rem 10rem;
 
 	&__info {
-		display: grid;
-		grid-template-columns: minmax(min-content, 8rem) minmax(min-content, 1fr);
-		column-gap: 1rem;
-		margin-left: auto;
+		@include importantHeadings;
 		margin-bottom: 5rem;
 	}
 
@@ -189,17 +177,6 @@
 		margin-bottom: 2rem;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 ///////////////
 // GALLERY SECTION
@@ -263,7 +240,7 @@
 
 		text-align: center;
 
-		transition: all .2s ease-in;
+		transition: all 0.2s ease-in;
 
 		&:hover {
 			transform: scaleY(1.05);
@@ -294,8 +271,27 @@
 	}
 }
 
+// CTA SECTION
 
+.cta {
+	padding: 20rem 10rem;
 
+	&__info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+	}
+
+	&__btn {
+		margin-top: 6rem;
+		&:not(:last-of-type) {
+			margin-right: 5rem;
+		}
+	}
+}
 
 ///////////////
 // GALLERY POPUPS
@@ -305,14 +301,12 @@
 	opacity: 0;
 	visibility: hidden;
 
-
 	backdrop-filter: blur(5px);
 	height: 100vh;
 	width: 100vw;
 
 	display: flex;
 	justify-content: center;
-
 
 	position: fixed;
 	top: 0;
@@ -337,7 +331,7 @@
 		align-items: center;
 
 		gap: 5rem;
-		
+
 		position: relative;
 	}
 
@@ -345,7 +339,7 @@
 		object-fit: cover;
 		height: 100%;
 		width: 70%;
-		transition: transform .2s ease-in;
+		transition: transform 0.2s ease-in;
 
 		&:hover {
 			cursor: pointer;
@@ -354,7 +348,6 @@
 	}
 
 	&__close {
-		
 		&-wrapper {
 			height: 5rem;
 			width: 5rem;
@@ -374,16 +367,16 @@
 			height: 0.3rem;
 			width: 4.5rem;
 			background-color: #fff;
-	
+
 			position: absolute;
 			top: 8.5%;
 			right: 7%;
 			transform: rotate(45deg);
 
-			transition: background-color .1s ease-out;
-	
+			transition: background-color 0.1s ease-out;
+
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -392,7 +385,7 @@
 				transform: rotate(-90deg);
 				background-color: #fff;
 
-				transition: background-color .1s ease-out;
+				transition: background-color 0.1s ease-out;
 			}
 
 			&:hover,
@@ -400,7 +393,6 @@
 				background-color: $color-primary;
 			}
 		}
-		
 	}
 
 	&:target {
