@@ -39,19 +39,19 @@
 				<div class="about__images">
 					<img
 						src="img/about-1.jpg"
-						alt=""
+						alt="Beautiful interior of the house"
 						class="about__image about__image-1"
 					/>
 					<img
 						src="img/about-2.jpg"
-						alt=""
+						alt="Spacy kitchen with table and chairs"
 						class="about__image about__image-2"
 					/>
 				</div>
 				<div class="about__info">
 					<div class="break"></div>
 					<div class="container">
-						<h4 class="upper heading-4">Who we are</h4>
+						<h3 class="upper heading-3">Who we are</h3>
 						<h2 class="upper heading-2">Residential remodeling contractor</h2>
 						<div class="bold">
 							We are an experienced company, that is fast and reliable.
@@ -63,8 +63,8 @@
 							reliable.
 						</p>
 						<div class="about__info-buttons">
-							<a href="#" class="btn upper">Read More</a>
-							<a href="#" class="btn btn--primary upper">Contact Us</a>
+							<a href="#service" class="btn upper">Read More</a>
+							<a href="#contact" class="btn btn--primary upper">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -72,11 +72,11 @@
 		</section>
 
 		<!-- SECTION SERVICE -->
-		<section class="service">
+		<section class="service" id="service">
 			<div class="service__info">
 				<div class="break"></div>
 				<div class="container">
-					<h4 class="upper heading-4">What we do</h4>
+					<h3 class="upper heading-3">What we do</h3>
 					<h2 class="upper heading-2">Provide the best services</h2>
 				</div>
 			</div>
@@ -85,9 +85,9 @@
 					<div class="service__icon">
 						<i class="fa-solid fa-pencil"></i>
 					</div>
-					<h4 class="service__heading heading-4 upper">Free Estimates</h4>
+					<h3 class="service__heading heading-3 upper">Free Estimates</h3>
 					<p>
-						All of our estimates are totally free.<a href="#">Contact us</a> if
+						All of our estimates are totally free.<a href="#contact">Contact us</a> if
 						you would like us to provide you with our quotation.
 					</p>
 				</div>
@@ -95,7 +95,7 @@
 					<div class="service__icon">
 						<i class="fa-solid fa-paint-roller"></i>
 					</div>
-					<h4 class="service__heading heading-4 upper">Interior Work</h4>
+					<h3 class="service__heading heading-3 upper">Interior Work</h3>
 					<p>
 						Sheetrocks, painting, tiles, kitchens, bathrooms, custom woodwork.
 						We have experience with full-house renovations.
@@ -105,7 +105,7 @@
 					<div class="service__icon">
 						<i class="fa-solid fa-house-chimney"></i>
 					</div>
-					<h4 class="service__heading heading-4 upper">Exterior Work</h4>
+					<h3 class="service__heading heading-3 upper">Exterior Work</h3>
 					<p>
 						When it comes to exterior work, we're specializing in siding, stucco
 						and stone
@@ -115,7 +115,7 @@
 					<div class="service__icon">
 						<i class="fa-solid fa-circle-info"></i>
 					</div>
-					<h4 class="service__heading heading-4 upper">Consulting</h4>
+					<h3 class="service__heading heading-3 upper">Consulting</h3>
 					<p>
 						We're aware that some choices might be tough when it comes to
 						remodeling, that's why we're there to land you a hand if you need an
@@ -159,7 +159,7 @@
 				</p>
 				<div class="cta__buttons upper">
 					<a href="tel:609-635-6928" class="cta__btn btn">Call Us</a>
-					<a href="#" class="cta__btn btn btn--primary upper">Contact Us</a>
+					<a href="#contact" class="cta__btn btn btn--primary upper">Contact Us</a>
 				</div>
 			</div>
 		</section>
@@ -180,6 +180,52 @@
 		//////////////////
 		//////////////////
 		-->
+
+	<!-- FORM POPUP -->
+	<section id="contact" class="contact">
+		<div class="contact__container">
+			<h3 class="contact__heading upper">If you like us to contact you back, please fill following:</h3>
+			<form action="" class="contact__form">
+				<div class="contact__form-item">
+					<label for="first_name">First name</label>
+					<input type="text" id="first_name" name="first_name" placeholder="Enter your first name here..." required>
+				</div>
+				<div class="contact__form-item">
+					<label for="last_name">Last name</label>
+					<input type="text" id="last_name" name="last_name" placeholder="Enter your last name here..." required>
+				</div>
+				<div class="contact__form-item">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="Enter your email here..." required>
+				</div>
+				<div class="contact__form-item">
+					<label for="phone">Phone number (XXX-XXX-XXXX)</label>
+					<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your phone here..." required>
+				</div>
+				<div class="contact__form-item">
+					<label for="msg">Your message:</label>
+					<textarea name="msg" id="msg" class="msg" cols="30" rows="10" placeholder="Your message here..." required></textarea>
+				</div>
+				<button class="btn btn--primary">Send</button>
+			</form>
+			<div class="contact__call">
+				<p class="upper contact__call-text">or simply</p>
+				<a href="tel:609-635-6928" class="btn btn--dark contact__call-btn">Call Us</a>
+			</div>
+			<a href="#cta" class="contact__close">
+				<div class="contact__close-wrapper">
+					<div class="contact__close-btn"></div>
+				</div>
+			</a>
+			
+		</div>
+	</section>
+
+
+
+
+
+
 		<!-- INTERIOR GALLERY POPUP -->
 		<section id="interior" class="interior">
 			<div class="interior__container">
@@ -194,9 +240,12 @@
 				<img src="./img/int-9.jpg" alt="Picture 9" class="interior__image">
 			</div>
 			<a href="#gallery" class="interior__close">
-				<div class="interior__close-wrapper"></div>
-				<div class="interior__close-btn"></div>
+				<div class="interior__close-wrapper">
+					<div class="interior__close-btn"></div>
+				</div>
 			</a>
+		
+			
 		</section>
 
 		<!-- EXTERIOR GALLERY GROUP -->
@@ -213,9 +262,11 @@
 				<img src="./img/ext-9.jpg" alt="Picture 9" class="exterior__image">
 			</div>
 			<a href="#gallery" class="interior__close">
-				<div class="interior__close-wrapper"></div>
-				<div class="interior__close-btn"></div>
+				<div class="interior__close-wrapper">
+					<div class="interior__close-btn"></div>
+				</div>
 			</a>
+			
 		</section>
 	</body>
 </html>

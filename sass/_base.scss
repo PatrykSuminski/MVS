@@ -19,8 +19,44 @@ p {
 	margin-bottom: 1rem;
 }
 
-a {
+a,
+button {
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
+}
+
+// FORM
+input {
+	display: block;
+	line-height: 3rem;
+	text-indent: 1rem;
+	font-size: 1.6rem;
+	font-family: "Roboto", sans-serif;
+	width: 100%;
+	margin-top: 0.2rem;
+
+	&:focus {
+		outline: none;
+		border: 1.5px solid $color-primary;
+	}
+}
+
+textarea {
+	display: block;
+	font-family: "Roboto", sans-serif;
+	text-indent: 1rem;
+	padding-top: 0.8rem;
+	font-size: 1.8rem;
+	width: 100%;
+
+	&:focus {
+		outline: none;
+		border: 1.5px solid $color-primary;
+	}
+}
+
+label {
+	font-family: inherit;
+	font-size: 2rem;
 }

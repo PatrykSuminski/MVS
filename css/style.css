@@ -35,7 +35,7 @@
   margin-bottom: 8rem;
   letter-spacing: 2px; }
 
-.heading-4 {
+.heading-3 {
   font-size: 1.8rem;
   font-weight: 400; }
 
@@ -57,10 +57,38 @@ p {
   font-size: 1.6rem;
   margin-bottom: 1rem; }
 
-a {
+a,
+button {
   text-decoration: none;
   color: inherit;
   cursor: pointer; }
+
+input {
+  display: block;
+  line-height: 3rem;
+  text-indent: 1rem;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin-top: 0.2rem; }
+  input:focus {
+    outline: none;
+    border: 1.5px solid #eb2f2f; }
+
+textarea {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  text-indent: 1rem;
+  padding-top: 0.8rem;
+  font-size: 1.8rem;
+  width: 100%; }
+  textarea:focus {
+    outline: none;
+    border: 1.5px solid #eb2f2f; }
+
+label {
+  font-family: inherit;
+  font-size: 2rem; }
 
 .header {
   color: #fff;
@@ -122,7 +150,8 @@ a {
     transform: scale(1); } }
 
 .about {
-  padding: 40rem 20rem 10rem 20rem; }
+  padding: 40rem 20rem 10rem 20rem;
+  height: 100vh; }
   .about__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -254,11 +283,86 @@ a {
     .cta__btn:not(:last-of-type) {
       margin-right: 5rem; }
 
+.contact {
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: none; }
+  .contact__heading {
+    margin-bottom: 5rem;
+    font-size: 3rem; }
+  .contact__container {
+    background-color: rgba(237, 237, 237, 0.85);
+    height: 95%;
+    width: 40%;
+    padding: 8rem;
+    transform: translateY(2.5%); }
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+    .contact__form-item:last-of-type {
+      margin-bottom: 2.5rem; }
+    .contact__form button {
+      margin-bottom: 15rem; }
+  .contact__call {
+    width: 100%;
+    text-align: center; }
+    .contact__call-text {
+      font-size: 1.4rem; }
+    .contact__call-btn {
+      width: 100%;
+      background-color: #ededed; }
+  .contact:target {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in; }
+  .contact__close-wrapper {
+    height: 8rem;
+    width: 8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .contact__close-wrapper:hover > .contact__close-btn,
+    .contact__close-wrapper:hover > .contact__close-btn::before {
+      background-color: #eb2f2f; }
+  .contact__close-btn {
+    height: 0.3rem;
+    width: 4.5rem;
+    background-color: #121212;
+    transform: rotate(45deg);
+    transition: background-color 0.1s ease-out; }
+    .contact__close-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.3rem;
+      width: 4.5rem;
+      transform: rotate(-90deg);
+      background-color: #121212;
+      transition: background-color 0.1s ease-out; }
+    .contact__close-btn:hover, .contact__close-btn:hover::before {
+      background-color: #eb2f2f; }
+
 .interior,
 .exterior {
   opacity: 0;
   visibility: hidden;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -269,7 +373,7 @@ a {
   z-index: 9999; }
   .interior__container,
   .exterior__container {
-    background-color: rgba(18, 18, 18, 0.8);
+    background-color: rgba(18, 18, 18, 0.85);
     height: 90%;
     width: 90%;
     padding: 5rem;
@@ -293,25 +397,25 @@ a {
       transform: scale(1.1); }
   .interior__close-wrapper,
   .exterior__close-wrapper {
-    height: 5rem;
-    width: 5rem;
+    height: 8rem;
+    width: 8rem;
     cursor: pointer;
     position: absolute;
-    top: 6.5%;
-    right: 6.8%; }
-    .interior__close-wrapper:hover + .interior__close-btn,
-    .interior__close-wrapper:hover + .interior__close-btn::before,
-    .exterior__close-wrapper:hover + .interior__close-btn,
-    .exterior__close-wrapper:hover + .interior__close-btn::before {
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .interior__close-wrapper:hover > .contact__close-btn,
+    .interior__close-wrapper:hover > .contact__close-btn::before,
+    .exterior__close-wrapper:hover > .contact__close-btn,
+    .exterior__close-wrapper:hover > .contact__close-btn::before {
       background-color: #eb2f2f; }
   .interior__close-btn,
   .exterior__close-btn {
     height: 0.3rem;
     width: 4.5rem;
-    background-color: #fff;
-    position: absolute;
-    top: 8.5%;
-    right: 7%;
+    background-color: #121212;
     transform: rotate(45deg);
     transition: background-color 0.1s ease-out; }
     .interior__close-btn::before,
@@ -323,12 +427,27 @@ a {
       height: 0.3rem;
       width: 4.5rem;
       transform: rotate(-90deg);
-      background-color: #fff;
+      background-color: #121212;
       transition: background-color 0.1s ease-out; }
     .interior__close-btn:hover, .interior__close-btn:hover::before,
     .exterior__close-btn:hover,
     .exterior__close-btn:hover::before {
       background-color: #eb2f2f; }
+  .interior__close-wrapper,
+  .exterior__close-wrapper {
+    top: 4.2%;
+    right: 4.7%; }
+    .interior__close-wrapper:hover > .interior__close-btn,
+    .interior__close-wrapper:hover > .interior__close-btn::before,
+    .exterior__close-wrapper:hover > .interior__close-btn,
+    .exterior__close-wrapper:hover > .interior__close-btn::before {
+      background-color: #eb2f2f; }
+  .interior__close-btn,
+  .exterior__close-btn {
+    background-color: #fff; }
+    .interior__close-btn::before,
+    .exterior__close-btn::before {
+      background-color: #fff; }
   .interior:target,
   .exterior:target {
     visibility: visible;

@@ -96,6 +96,7 @@
 
 .about {
 	padding: 40rem 20rem 10rem 20rem;
+	height: 100vh;
 
 	&__container {
 		display: grid;
@@ -293,29 +294,81 @@
 	}
 }
 
+//////////////////
+//////////////////
+//POPUPS
+//////////////////
+//////////////////
+
+///////////////
+// FORM POPUP
+.contact {
+	@include popup;
+	opacity: 0;
+	visibility: none;
+
+	&__heading {
+		margin-bottom: 5rem;
+		font-size: 3rem;
+	}
+
+	&__container {
+		background-color: rgba($color-light, 0.85);
+
+		height: 95%;
+		width: 40%;
+
+		padding: 8rem;
+
+		transform: translateY(2.5%);
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		&-item:last-of-type {
+			margin-bottom: 2.5rem;
+		}
+
+		button {
+			margin-bottom: 15rem;
+		}
+	}
+
+	&__call {
+		width: 100%;
+		text-align: center;
+
+		&-text {
+			font-size: 1.4rem;
+		}
+
+		&-btn {
+			width: 100%;
+			background-color: $color-light;
+		}
+	}
+
+	&:target {
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 0.5s ease-in;
+	}
+
+	@include popupClose;
+}
+
 ///////////////
 // GALLERY POPUPS
 
 .interior,
 .exterior {
-	opacity: 0;
-	visibility: hidden;
-
-	backdrop-filter: blur(5px);
-	height: 100vh;
-	width: 100vw;
-
-	display: flex;
-	justify-content: center;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-
-	z-index: 9999;
+	@include popup;
 
 	&__container {
-		background-color: rgba($color-dark, 0.8);
+		background-color: rgba($color-dark, 0.85);
 
 		height: 90%;
 		width: 90%;
@@ -347,50 +400,27 @@
 		}
 	}
 
+
+
+
+	@include popupClose;
+	// ADJUSTMENTS TO POPUP CLOSE "X" BUTTON
 	&__close {
 		&-wrapper {
-			height: 5rem;
-			width: 5rem;
-			cursor: pointer;
+			top: 4.2%;
+			right: 4.7%;
 
-			position: absolute;
-			top: 6.5%;
-			right: 6.8%;
-
-			&:hover + .interior__close-btn,
-			&:hover + .interior__close-btn::before {
+			&:hover > .interior__close-btn,
+			&:hover > .interior__close-btn::before {
 				background-color: $color-primary;
 			}
 		}
 
 		&-btn {
-			height: 0.3rem;
-			width: 4.5rem;
 			background-color: #fff;
 
-			position: absolute;
-			top: 8.5%;
-			right: 7%;
-			transform: rotate(45deg);
-
-			transition: background-color 0.1s ease-out;
-
 			&::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 0.3rem;
-				width: 4.5rem;
-				transform: rotate(-90deg);
 				background-color: #fff;
-
-				transition: background-color 0.1s ease-out;
-			}
-
-			&:hover,
-			&:hover::before {
-				background-color: $color-primary;
 			}
 		}
 	}
