@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   border: 2px solid black;
   padding: 1rem 1.5rem;
   transition: all 0.2s ease-in; }
@@ -26,7 +26,7 @@
 
 .bold {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 4rem; }
 
 .heading-2 {
@@ -54,7 +54,7 @@ html {
   line-height: 1.6; }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem; }
 
 a,
@@ -63,11 +63,14 @@ button {
   color: inherit;
   cursor: pointer; }
 
+ul, ol {
+  list-style: none; }
+
 input {
   display: block;
   line-height: 3rem;
   text-indent: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: "Roboto", sans-serif;
   width: 100%;
   margin-top: 0.2rem; }
@@ -161,15 +164,18 @@ label {
   .about__images {
     display: flex;
     justify-content: flex-end;
-    position: relative; }
+    position: relative;
+    flex-shrink: 0; }
   .about__image {
-    max-width: 40%;
+    max-width: 35%;
+    height: 100%;
     display: block;
     object-fit: contain;
     filter: grayscale(100);
     box-shadow: 9px 12px 20px -20px rgba(0, 0, 0, 0.35); }
     .about__image-2 {
-      max-width: 40%;
+      max-width: 35%;
+      height: 100%;
       position: absolute;
       top: -30%;
       right: 50%; }
@@ -208,7 +214,7 @@ label {
   .service__heading {
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin-bottom: 2rem; }
 
 .gallery {
@@ -282,6 +288,38 @@ label {
     margin-top: 6rem; }
     .cta__btn:not(:last-of-type) {
       margin-right: 5rem; }
+
+.footer {
+  height: 40rem;
+  background-color: #121212;
+  color: #ededed;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 8rem 0; }
+  .footer__container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; }
+  .footer__logo {
+    font-size: 3rem; }
+  .footer__contact-item {
+    border-bottom: 1px dotted #ededed;
+    padding-bottom: 1rem;
+    transition: all .2s ease-out; }
+    .footer__contact-item:hover, .footer__contact-item:target {
+      color: #eb2f2f;
+      border-bottom: 1px dotted #eb2f2f; }
+    .footer__contact-item:not(:last-of-type) {
+      margin-bottom: 3rem; }
+  .footer__contact-icon {
+    font-size: 2.5rem;
+    margin-right: 2rem; }
+  .footer__copy {
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 6rem; }
 
 .contact {
   opacity: 0;
