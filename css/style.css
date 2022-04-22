@@ -93,6 +93,103 @@ label {
   font-family: inherit;
   font-size: 2rem; }
 
+.menu__toggle {
+  display: none; }
+
+.menu__button {
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  display: inline-block;
+  height: 6rem;
+  width: 6rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 66666; }
+  .menu__button:hover .menu__icon,
+  .menu__button:hover .menu__icon::after,
+  .menu__button:hover .menu__icon::before {
+    background-color: #eb2f2f; }
+
+.menu__icon {
+  background-color: #ededed;
+  color: #ededed;
+  width: 4rem;
+  height: 3px;
+  position: relative; }
+  .menu__icon::before, .menu__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: #ededed;
+    width: 4rem;
+    height: 3px; }
+  .menu__icon::before {
+    top: -1rem; }
+  .menu__icon::after {
+    top: 1rem; }
+
+.menu__background {
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  height: 6rem;
+  width: 6rem;
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  z-index: 8888; }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  height: 100vh;
+  width: 0;
+  visibility: none;
+  transition: all 0.2s 0.2s ease-out;
+  z-index: 8888; }
+  .nav__item {
+    display: block;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in; }
+    .nav__item:hover, .nav__item:active {
+      color: #eb2f2f; }
+    .nav__item-number {
+      font-weight: 100;
+      font-size: 3rem;
+      margin-right: 4rem; }
+  .nav li:not(:last-of-type) {
+    margin-bottom: 4rem; }
+
+.menu__toggle:checked ~ .nav {
+  width: 100vw;
+  right: 0; }
+
+.menu__toggle:checked ~ .menu__background {
+  transform: scale(80);
+  visibility: visible; }
+
+.menu__toggle:checked ~ .menu__button .menu__icon {
+  background-color: black; }
+
+.menu__toggle:checked ~ .menu__button .menu__icon::before {
+  transform: rotate(-45deg) translate(-0.8rem, 0.5rem); }
+
+.menu__toggle:checked ~ .menu__button .menu__icon::after {
+  transform: rotate(45deg) translate(-0.8rem, -0.6rem); }
+
 .header {
   color: #fff;
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/header.jpg);
@@ -306,7 +403,7 @@ label {
   .footer__contact-item {
     border-bottom: 1px dotted #ededed;
     padding-bottom: 1rem;
-    transition: all .2s ease-out; }
+    transition: all 0.2s ease-out; }
     .footer__contact-item:hover, .footer__contact-item:target {
       color: #eb2f2f;
       border-bottom: 1px dotted #eb2f2f; }
@@ -332,7 +429,7 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999999999;
   opacity: 0;
   visibility: none; }
   .contact__heading {
@@ -373,23 +470,25 @@ label {
     right: 0%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    overflow: hidden; }
     .contact__close-wrapper:hover > .contact__close-btn,
     .contact__close-wrapper:hover > .contact__close-btn::before {
       background-color: #eb2f2f; }
   .contact__close-btn {
     height: 0.3rem;
-    width: 4.5rem;
+    width: 4rem;
     background-color: #121212;
-    transform: rotate(45deg);
-    transition: background-color 0.1s ease-out; }
+    transform: rotate(-135deg);
+    transition: background-color 0.1s ease-out;
+    position: relative; }
     .contact__close-btn::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 0rem;
       left: 0;
       height: 0.3rem;
-      width: 4.5rem;
+      width: 4rem;
       transform: rotate(-90deg);
       background-color: #121212;
       transition: background-color 0.1s ease-out; }
@@ -408,7 +507,7 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999; }
+  z-index: 999999999; }
   .interior__container,
   .exterior__container {
     background-color: rgba(18, 18, 18, 0.85);
@@ -443,7 +542,8 @@ label {
     right: 0%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    overflow: hidden; }
     .interior__close-wrapper:hover > .contact__close-btn,
     .interior__close-wrapper:hover > .contact__close-btn::before,
     .exterior__close-wrapper:hover > .contact__close-btn,
@@ -452,18 +552,19 @@ label {
   .interior__close-btn,
   .exterior__close-btn {
     height: 0.3rem;
-    width: 4.5rem;
+    width: 4rem;
     background-color: #121212;
-    transform: rotate(45deg);
-    transition: background-color 0.1s ease-out; }
+    transform: rotate(-135deg);
+    transition: background-color 0.1s ease-out;
+    position: relative; }
     .interior__close-btn::before,
     .exterior__close-btn::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 0rem;
       left: 0;
       height: 0.3rem;
-      width: 4.5rem;
+      width: 4rem;
       transform: rotate(-90deg);
       background-color: #121212;
       transition: background-color 0.1s ease-out; }

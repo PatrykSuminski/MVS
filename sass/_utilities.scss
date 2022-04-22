@@ -99,12 +99,8 @@ $gradient-light: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
 	top: 0;
 	left: 0;
 
-	z-index: 9999;
+	z-index: 999999999;
 }
-
-
-
-
 
 @mixin popupClose {
 	&__close {
@@ -118,6 +114,9 @@ $gradient-light: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			overflow: hidden;
+
 			&:hover > .contact__close-btn,
 			&:hover > .contact__close-btn::before {
 				background-color: $color-primary;
@@ -125,17 +124,19 @@ $gradient-light: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
 		}
 		&-btn {
 			height: 0.3rem;
-			width: 4.5rem;
+			width: 4rem;
 			background-color: $color-dark;
-			transform: rotate(45deg);
+			transform: rotate(-135deg);
 			transition: background-color 0.1s ease-out;
+
+			position: relative;
 			&::before {
 				content: "";
 				position: absolute;
-				top: 0;
+				top: 0rem;
 				left: 0;
 				height: 0.3rem;
-				width: 4.5rem;
+				width: 4rem;
 				transform: rotate(-90deg);
 				background-color: $color-dark;
 				transition: background-color 0.1s ease-out;
