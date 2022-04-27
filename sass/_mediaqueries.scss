@@ -85,17 +85,38 @@
 		&__items {
 			flex-wrap: wrap;
 			justify-content: space-evenly;
-			gap: 5rem;
+			gap: 8rem;
 		}
 
 		&__item {
-			max-width: 35%;
+			min-width: 30%;
+			margin-right: 1rem;
 		}
 	}
 
 	// SECTION HEIGHT CHANGED (BACKGROUND LOOKS BETTER)
 	.gallery {
 		min-height: 75vh;
+	}
+
+
+
+
+	// FORM POPUP
+	.contact {
+		&__heading {
+			margin-bottom: 3rem;
+			font-size: 2.6rem;
+		}
+
+		&__form {
+			&-btn {
+				margin-top: 1rem;
+			}
+		}
+
+
+		
 	}
 
 	// POPUP GALLERY
@@ -106,3 +127,20 @@
 		}
 	}
 }
+
+
+
+// CONTACT POPUP FOR LATER (PHONES)
+// &__call {
+// 	width: 100%;
+// 	text-align: center;
+
+// 	&-text {
+// 		font-size: 1.4rem;
+// 	}
+
+// 	&-btn {
+// 		width: 100%;
+// 		background-color: $color-light;
+// 	}
+// }
