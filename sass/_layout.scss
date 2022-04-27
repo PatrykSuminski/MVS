@@ -242,12 +242,17 @@
 // ABOUT SECTION
 
 .about {
-	padding: 40rem 20rem 10rem 20rem;
+	padding: 20rem 20rem 10rem 20rem;
 	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	&__container {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 3fr 2fr;
 		column-gap: 6rem;
 		justify-items: center;
 		align-items: start;
@@ -516,7 +521,7 @@
 	&__container {
 		background-color: rgba($color-light, 0.85);
 
-		height: 95%;
+		height: 95vh;
 		width: 40%;
 
 		padding: 8rem;
@@ -533,7 +538,7 @@
 			margin-bottom: 2.5rem;
 		}
 
-		button {
+		&-btn {
 			margin-bottom: 15rem;
 		}
 	}

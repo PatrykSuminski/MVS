@@ -1,0 +1,105 @@
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+//  DESKTOPS - max width 1600px
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+@media screen and (max-width: 100em) {
+	html {
+		font-size: 50%;
+	}
+
+	// HEADER CONTENT - MOVE UP A LITTLE BIT
+	.header {
+		&__content {
+			top: 65%;
+		}
+	}
+
+	// ABOUT SECTION IMAGES FIX
+	.about {
+		padding: 10rem 10rem;
+
+		&__container {
+			grid-template-columns: 3fr 2fr;
+		}
+
+		&__image {
+			&-2 {
+				right: 40%;
+			}
+		}
+	}
+
+	// CTA POPUP
+	.contact {
+		// CHANGE WIDTH AND HEIGHT TO LOOK BETTER
+		&__container {
+			width: 50%;
+		}
+	}
+}
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+// TABS and DEVICES - max width +/- 1250px
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+@media screen and (max-width: 78em) {
+	// PUT IMAGES IN NEW ROW
+	.about {
+		height: auto;
+		padding: 20rem 10rem;
+
+		&__container {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr;
+			row-gap: 15rem;
+		}
+
+		// CHANGE IMAGES POSITION
+		&__images {
+			justify-content: center;
+			align-items: center;
+			padding-right: 20rem;
+			transform: translateX(-10rem);
+		}
+
+		&__image {
+			&-1 {
+				z-index: 1;
+			}
+
+			&-2 {
+				top: 30%;
+				right: 5%;
+			}
+		}
+	}
+
+	// SERVICE ITEMS IN TWO ROWS NOW, INSTEAD OF ONE
+	.service {
+		&__items {
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			gap: 5rem;
+		}
+
+		&__item {
+			width: 45%;
+		}
+	}
+
+	// SECTION HEIGHT CHANGED (BACKGROUND LOOKS BETTER)
+	.gallery {
+		min-height: 75vh;
+	}
+
+	.contact {
+		&__container {
+			width: 70%;
+		}
+	}
+}

@@ -250,11 +250,15 @@ label {
     transform: scale(1); } }
 
 .about {
-  padding: 40rem 20rem 10rem 20rem;
-  height: 100vh; }
+  padding: 20rem 20rem 10rem 20rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   .about__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     column-gap: 6rem;
     justify-items: center;
     align-items: start; }
@@ -425,7 +429,9 @@ label {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -437,7 +443,7 @@ label {
     font-size: 3rem; }
   .contact__container {
     background-color: rgba(237, 237, 237, 0.85);
-    height: 95%;
+    height: 95vh;
     width: 40%;
     padding: 8rem;
     transform: translateY(2.5%); }
@@ -447,7 +453,7 @@ label {
     gap: 2rem; }
     .contact__form-item:last-of-type {
       margin-bottom: 2.5rem; }
-    .contact__form button {
+    .contact__form-btn {
       margin-bottom: 15rem; }
   .contact__call {
     width: 100%;
@@ -503,7 +509,9 @@ label {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -592,3 +600,46 @@ label {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.5s ease-in; }
+
+@media screen and (max-width: 100em) {
+  html {
+    font-size: 50%; }
+  .header__content {
+    top: 65%; }
+  .about {
+    padding: 10rem 10rem; }
+    .about__container {
+      grid-template-columns: 3fr 2fr; }
+    .about__image-2 {
+      right: 40%; }
+  .contact__container {
+    width: 50%; } }
+
+@media screen and (max-width: 78em) {
+  .about {
+    height: auto;
+    padding: 20rem 10rem; }
+    .about__container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 15rem; }
+    .about__images {
+      justify-content: center;
+      align-items: center;
+      padding-right: 20rem;
+      transform: translateX(-10rem); }
+    .about__image-1 {
+      z-index: 1; }
+    .about__image-2 {
+      top: 30%;
+      right: 5%; }
+  .service__items {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5rem; }
+  .service__item {
+    width: 45%; }
+  .gallery {
+    min-height: 75vh; }
+  .contact__container {
+    width: 70%; } }

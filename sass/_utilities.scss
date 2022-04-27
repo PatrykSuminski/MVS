@@ -93,7 +93,9 @@ $gradient-light: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
 	width: 100vw;
 
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 
 	position: fixed;
 	top: 0;
