@@ -19,7 +19,7 @@
 
 	// ABOUT SECTION IMAGES FIX
 	.about {
-		padding: 10rem 10rem;
+		padding: 40rem 10rem;
 
 		&__container {
 			grid-template-columns: 3fr 2fr;
@@ -45,7 +45,7 @@
 	// PUT IMAGES IN NEW ROW
 	.about {
 		height: auto;
-		padding: 10rem 10rem;
+		padding: 15rem 10rem;
 
 		&__container {
 			grid-template-columns: 1fr;
@@ -81,7 +81,7 @@
 
 	// SERVICE ITEMS IN TWO ROWS NOW, INSTEAD OF ONE
 	.service {
-		padding: 10rem 10rem;
+		padding: 15rem 10rem;
 		&__items {
 			flex-wrap: wrap;
 			justify-content: space-evenly;
@@ -118,16 +118,51 @@
 
 		
 	}
-
-	// POPUP GALLERY
-	.interior,
-	.exterior {
-		&__container {
-			transform: translateY(0);
-		}
-	}
 }
 
+
+
+
+
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+// TABS and DEVICES - max width +/- 1250px
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+@media screen and (max-width: 56.25em) {
+	html {
+		font-size: 37.5%;
+	}
+
+	.about {
+
+		&__images {
+			margin-top: 10rem;
+		}
+		&__image {
+			max-width: 50%;
+		}
+	}
+
+	.service {
+		&__item {
+			padding: 5rem 8rem;
+			min-width: 80%;
+			display: flex;
+			gap: 1rem;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	.gallery {
+		min-height: 50vh;
+	}
+}
 
 
 // CONTACT POPUP FOR LATER (PHONES)
