@@ -28,12 +28,19 @@
   font-weight: bold;
   font-size: 2.2rem;
   margin-bottom: 4rem; }
+  @media screen and (max-width: 78em) {
+    .bold {
+      margin-bottom: 2rem; } }
 
 .heading-2 {
   font-size: 3.8rem;
   margin-top: 2rem;
   margin-bottom: 8rem;
   letter-spacing: 2px; }
+  @media screen and (max-width: 78em) {
+    .heading-2 {
+      margin-top: 1rem;
+      margin-bottom: 4rem; } }
 
 .heading-3 {
   font-size: 1.8rem;
@@ -210,7 +217,7 @@ label {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; }
+    max-width: 100%; }
   .header__title {
     font-size: 5.8rem;
     font-weight: 400;
@@ -251,7 +258,7 @@ label {
 
 .about {
   padding: 20rem 20rem 10rem 20rem;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -269,7 +276,7 @@ label {
     flex-shrink: 0; }
   .about__image {
     max-width: 35%;
-    height: 100%;
+    max-height: 100%;
     display: block;
     object-fit: contain;
     filter: grayscale(100);
@@ -279,7 +286,7 @@ label {
       height: 100%;
       position: absolute;
       top: -30%;
-      right: 50%; }
+      right: 40%; }
   .about__info {
     display: grid;
     grid-template-columns: minmax(min-content, 8rem) minmax(min-content, 1fr);
@@ -305,7 +312,7 @@ label {
     justify-content: space-around;
     gap: 5rem; }
   .service__item {
-    width: 20%;
+    max-width: 20%;
     border: 1px solid rgba(237, 237, 237, 0.3);
     padding: 3rem 4rem; }
   .service__icon {
@@ -394,7 +401,7 @@ label {
   height: 40rem;
   background-color: #121212;
   color: #ededed;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   padding: 8rem 0; }
   .footer__container {
@@ -435,34 +442,26 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999999999;
-  opacity: 0;
-  visibility: none; }
+  z-index: 999999999; }
   .contact__heading {
     margin-bottom: 5rem;
     font-size: 3rem; }
   .contact__container {
     background-color: rgba(237, 237, 237, 0.85);
-    height: 95vh;
+    max-height: 90%;
     width: 40%;
     padding: 8rem;
-    transform: translateY(2.5%); }
+    transform: translateY(0); }
   .contact__form {
     display: flex;
     flex-direction: column;
     gap: 2rem; }
     .contact__form-item:last-of-type {
-      margin-bottom: 2.5rem; }
+      margin-bottom: 6rem; }
     .contact__form-btn {
       margin-bottom: 15rem; }
   .contact__call {
-    width: 100%;
-    text-align: center; }
-    .contact__call-text {
-      font-size: 1.4rem; }
-    .contact__call-btn {
-      width: 100%;
-      background-color: #ededed; }
+    display: none; }
   .contact:target {
     visibility: visible;
     opacity: 1;
@@ -522,7 +521,6 @@ label {
     height: 90%;
     width: 90%;
     padding: 5rem;
-    transform: translateY(5%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 30%);
@@ -610,36 +608,41 @@ label {
     padding: 10rem 10rem; }
     .about__container {
       grid-template-columns: 3fr 2fr; }
-    .about__image-2 {
-      right: 40%; }
   .contact__container {
     width: 50%; } }
 
 @media screen and (max-width: 78em) {
   .about {
     height: auto;
-    padding: 20rem 10rem; }
+    padding: 10rem 10rem; }
     .about__container {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      row-gap: 15rem; }
+      grid-template-rows: 1fr 1fr; }
     .about__images {
-      justify-content: center;
-      align-items: center;
+      max-width: 80%;
+      justify-content: flex-end;
       padding-right: 20rem;
-      transform: translateX(-10rem); }
-    .about__image-1 {
-      z-index: 1; }
-    .about__image-2 {
-      top: 30%;
-      right: 5%; }
-  .service__items {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 5rem; }
-  .service__item {
-    width: 45%; }
+      margin-top: 5rem;
+      transform: translateY(-10%); }
+    .about__image {
+      max-width: 30%; }
+      .about__image-1 {
+        z-index: 1; }
+      .about__image-2 {
+        top: -30%;
+        right: 0; }
+    .about__info {
+      grid-row: 1; }
+  .service {
+    padding: 10rem 10rem; }
+    .service__items {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 5rem; }
+    .service__item {
+      max-width: 35%; }
   .gallery {
     min-height: 75vh; }
-  .contact__container {
-    width: 70%; } }
+  .interior__container,
+  .exterior__container {
+    transform: translateY(0); } }

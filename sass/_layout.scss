@@ -174,7 +174,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		width: 100%;
+		max-width: 100%;
 	}
 
 	&__title {
@@ -243,7 +243,7 @@
 
 .about {
 	padding: 20rem 20rem 10rem 20rem;
-	height: 100vh;
+	min-height: 100vh;
 
 	display: flex;
 	flex-direction: column;
@@ -267,7 +267,7 @@
 
 	&__image {
 		max-width: 35%;
-		height: 100%;
+		max-height: 100%;
 		display: block;
 		object-fit: contain;
 		filter: grayscale(100);
@@ -278,7 +278,7 @@
 			height: 100%;
 			position: absolute;
 			top: -30%;
-			right: 50%;
+			right: 40%;
 		}
 	}
 
@@ -315,7 +315,7 @@
 	}
 
 	&__item {
-		width: 20%;
+		max-width: 20%;
 		border: 1px solid rgba($color-light, 0.3);
 		padding: 3rem 4rem;
 	}
@@ -455,7 +455,7 @@
 	height: 40rem;
 	background-color: $color-dark;
 	color: $color-light;
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: 300;
 	padding: 8rem 0;
 
@@ -510,8 +510,6 @@
 // FORM POPUP
 .contact {
 	@include popup;
-	opacity: 0;
-	visibility: none;
 
 	&__heading {
 		margin-bottom: 5rem;
@@ -521,12 +519,12 @@
 	&__container {
 		background-color: rgba($color-light, 0.85);
 
-		height: 95vh;
+		max-height: 90%;
 		width: 40%;
 
 		padding: 8rem;
 
-		transform: translateY(2.5%);
+		transform: translateY(0);
 	}
 
 	&__form {
@@ -535,7 +533,7 @@
 		gap: 2rem;
 
 		&-item:last-of-type {
-			margin-bottom: 2.5rem;
+			margin-bottom: 6rem;
 		}
 
 		&-btn {
@@ -544,17 +542,7 @@
 	}
 
 	&__call {
-		width: 100%;
-		text-align: center;
-
-		&-text {
-			font-size: 1.4rem;
-		}
-
-		&-btn {
-			width: 100%;
-			background-color: $color-light;
-		}
+		display: none;
 	}
 
 	&:target {
@@ -580,8 +568,6 @@
 		width: 90%;
 
 		padding: 5rem;
-
-		transform: translateY(5%);
 
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
