@@ -655,7 +655,7 @@ label {
     max-width: 50%; }
   .service__item {
     padding: 5rem 8rem;
-    min-width: 80%;
+    min-width: 50%;
     display: flex;
     gap: 1rem;
     flex-direction: column;
