@@ -50,6 +50,7 @@
 		&__container {
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr 1fr;
+			row-gap: 2rem;
 		}
 
 		// CHANGE IMAGES POSITION
@@ -59,11 +60,11 @@
 			padding-right: 20rem;
 
 			margin-top: 5rem;
-			transform: translateY(-10%);
+			transform: translateY(-15%);
 		}
 
 		&__image {
-			max-width: 30%;
+			max-width: 35%;
 			&-1 {
 				z-index: 1;
 			}
@@ -99,9 +100,6 @@
 		min-height: 75vh;
 	}
 
-
-
-
 	// FORM POPUP
 	.contact {
 		&__heading {
@@ -114,15 +112,8 @@
 				margin-top: 1rem;
 			}
 		}
-
-
-		
 	}
 }
-
-
-
-
 
 ////////////////////////////////////////
 ////////////////////////////////////////
@@ -137,7 +128,6 @@
 	}
 
 	.about {
-
 		&__images {
 			margin-top: 10rem;
 		}
@@ -164,6 +154,54 @@
 	}
 }
 
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+// PHONES - max width +/- 600px
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+
+@media screen and (max-width: 37.5em) {
+	html {
+		font-size: 30%;
+	}
+	// ALIGN TEXT TO CENTER
+	.header__content {
+		text-align: center;
+	}
+
+	// REMOVE ONE ROW AND HIDE IMAGES
+	.about {
+		&__container {
+			grid-template-rows: 1fr;
+		}
+		&__images {
+			display: none;
+		}
+	}
+
+	//  MAKE "CARDS" WIDER SO THEY LOOK BETTER
+	.service {
+		&__item {
+			width: 100%;
+			padding: 5rem;
+		}
+	}
+
+	.gallery {
+		flex-wrap: wrap;
+
+		&__item {
+			min-width: 100%;
+			min-height: 25vh;
+
+			&-2 {
+				display: none;
+			}
+		}
+	}
+}
 
 // CONTACT POPUP FOR LATER (PHONES)
 // &__call {
